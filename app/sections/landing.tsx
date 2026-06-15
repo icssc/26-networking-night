@@ -3,7 +3,16 @@
 import Image from "next/image"
 import Typography from '@mui/material/Typography';
 import VariableProximity from "@/components/VariableProximity";
+import { fredoka } from "@/lib/fonts";
 import { useRef } from 'react';
+import Button from "@mui/material/Button";
+
+const bubblyTitleStyle = {
+    fontSize: "clamp(3rem, 8vw, 4.5rem)",
+    fontWeight: 700,
+    letterSpacing: "-0.045em",
+    lineHeight: 0.9,
+} as const;
 
 
 
@@ -22,35 +31,44 @@ export default function Landing(){
                 <div className="flex flex-col items-center">
 
                  <Typography>ICSSC Presents</Typography>
-
-                    <div ref={containerRef} className="relative">
+                    <div ref={containerRef} className="relative flex flex-col leading-none">
                         <VariableProximity
-                            style={{ fontSize: "4rem" }}
+                            font={fredoka}
+                            variant="galaxyStar"
+                            style={bubblyTitleStyle}
                             label="Networking"
-                            className={'variable-proximity-demo'}
-                            fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                            toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                            fromFontVariationSettings="'wght' 600"
+                            toFontVariationSettings="'wght' 700"
                             containerRef={containerRef}
                             radius={100}
                             falloff="linear"
                         />
                     </div>
 
-                    <div ref={containerRef} className="relative">
-
+                    <div ref={containerRef} className="relative flex flex-col leading-none">
                         <VariableProximity
-                            style={{ fontSize: "4rem" }}
+                            font={fredoka}
+                            variant="galaxyNebula"
+                            style={bubblyTitleStyle}
                             label="Night"
-                            className={'variable-proximity-demo'}
-                            fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                            toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                            fromFontVariationSettings="'wght' 600"
+                            toFontVariationSettings="'wght' 700"
                             containerRef={containerRef}
                             radius={100}
                             falloff="linear"
                         />
+                        
+
                     </div>
 
-                    </div>                
+                    <div className="flex mt-12 gap-3">
+                        <Button variant="galaxyDeep">Student RSVP</Button>
+                        <Button variant="galaxyStar">Industry Professional RSVP</Button>
+                     </div>
+                </div>   
+
+
+
             </div>
 
             
