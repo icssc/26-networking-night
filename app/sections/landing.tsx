@@ -6,6 +6,7 @@ import VariableProximity from "@/components/VariableProximity";
 import { fredoka } from "@/lib/fonts";
 import { useRef } from 'react';
 import Button from "@mui/material/Button";
+import { StarIcon } from "@/components/StarIcon";
 
 const bubblyTitleStyle = {
     fontSize: "clamp(3rem, 8vw, 4.5rem)",
@@ -24,7 +25,7 @@ export default function Landing(){
 
             <div className="flex items-center  gap-20">
                 <div>
-                    <Image src="/graphics/moon.png"  alt="moon" height="300" width="300"/>
+                    <Image src="/graphics/moon.png"  alt="moon" height="450" width="450"/>
                     
                 </div>
 
@@ -38,7 +39,7 @@ export default function Landing(){
                             style={bubblyTitleStyle}
                             label="Networking"
                             fromFontVariationSettings="'wght' 600"
-                            toFontVariationSettings="'wght' 700"
+                            toFontVariationSettings="'wght' 900"
                             containerRef={containerRef}
                             radius={100}
                             falloff="linear"
@@ -52,7 +53,7 @@ export default function Landing(){
                             style={bubblyTitleStyle}
                             label="Night"
                             fromFontVariationSettings="'wght' 600"
-                            toFontVariationSettings="'wght' 700"
+                            toFontVariationSettings="'wght' 900"
                             containerRef={containerRef}
                             radius={100}
                             falloff="linear"
@@ -61,9 +62,18 @@ export default function Landing(){
 
                     </div>
 
-                    <div className="flex mt-12 gap-3">
-                        <Button variant="galaxyDeep">Student RSVP</Button>
-                        <Button variant="galaxyStar">Industry Professional RSVP</Button>
+                    <div className="mt-8">
+                        <Typography variant="galaxyStar">Date | Location </Typography>                        
+                    </div>
+
+
+                    <div className="flex mt-10 gap-3">
+                        <Button variant="contained" color="galaxyStar" endIcon={<StarIcon />}>
+                            Student RSVP
+                        </Button>
+                        <Button variant="outlined" color="galaxyNebula" endIcon={<StarIcon />}>
+                            Industry Professional RSVP
+                        </Button>
                      </div>
                 </div>   
 
