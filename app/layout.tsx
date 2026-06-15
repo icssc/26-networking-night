@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Nunito } from "next/font/google";
 import { GalaxyBackground } from "@/components/GalaxyBackground";
+import { MuiProvider } from "@/components/MuiProvider";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
 });
 
@@ -26,13 +22,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${nunito.variable} h-full antialiased`}
     >
-      <body className="relative min-h-full flex flex-col">
-        <GalaxyBackground />
-        <div className="relative z-10 flex min-h-full flex-1 flex-col">
-          {children}
-        </div>
+      <body className={`${nunito.className} relative min-h-full flex flex-col font-sans`}>
+        <MuiProvider fontFamily={nunito.style.fontFamily}>
+          <GalaxyBackground />
+          <div className="relative z-10 flex min-h-full flex-1 flex-col">
+            {children}
+          </div>
+        </MuiProvider>
       </body>
     </html>
   );

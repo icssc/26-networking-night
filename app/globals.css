@@ -11,14 +11,13 @@
 @theme inline {
   --color-background: var(--galaxy-base);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-nunito);
 }
 
 body {
   background: var(--galaxy-base);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
 }
 
 .galaxy-bg {
