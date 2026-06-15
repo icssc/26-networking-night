@@ -1,12 +1,10 @@
-import Landing from "./sections/landing";
+import HomeContent from "./HomeContent";
+import About from "./sections/about";
 
 export default function Home() {
-  return(
+  return (
     <div className="min-h-full flex-1">
-
-      <Landing/>
-
-
-    </div> 
-     );
+      <HomeContent />
+    </div>
+  );
 }
