@@ -23,7 +23,8 @@ const planetHoverClass =
     "pointer-events-auto opacity-75 transition-opacity duration-300 hover:opacity-90";
 
 export default function Landing(){
-    const containerRef = useRef(null);
+    const networkingContainerRef = useRef<HTMLDivElement | null>(null);
+    const nightContainerRef = useRef<HTMLDivElement | null>(null);
     return(
         <section className="relative flex min-h-screen w-screen items-center justify-center">
             <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
@@ -76,7 +77,7 @@ export default function Landing(){
                 <div className="flex flex-col items-center">
 
                  <Typography>ICSSC Presents</Typography>
-                    <div ref={containerRef} className="relative flex flex-col leading-none">
+                    <div ref={networkingContainerRef} className="relative flex flex-col leading-none">
                         <VariableProximity
                             font={fredoka}
                             variant="galaxyStar"
@@ -84,13 +85,13 @@ export default function Landing(){
                             label="Networking"
                             fromFontVariationSettings="'wght' 600"
                             toFontVariationSettings="'wght' 900"
-                            containerRef={containerRef}
+                            containerRef={networkingContainerRef}
                             radius={100}
                             falloff="linear"
                         />
                     </div>
 
-                    <div ref={containerRef} className="relative flex flex-col leading-none">
+                    <div ref={nightContainerRef} className="relative flex flex-col leading-none">
                         <VariableProximity
                             font={fredoka}
                             variant="galaxyNebula"
@@ -98,7 +99,7 @@ export default function Landing(){
                             label="Night"
                             fromFontVariationSettings="'wght' 600"
                             toFontVariationSettings="'wght' 900"
-                            containerRef={containerRef}
+                            containerRef={nightContainerRef}
                             radius={100}
                             falloff="linear"
                         />

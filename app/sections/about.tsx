@@ -7,7 +7,28 @@ import { useState } from "react";
 import ScrollFloat from "@/components/ScrollFloat";
 import { StarIcon } from "@/components/StarIcon";
 
-const events = ["Rotating Games", "Speed Networking", "Free-For-All", "Raffle"];
+const events = [
+    {
+        icon: "🎮",
+        name: "Rotating Games",
+        description: "Fast-paced table games designed to spark conversation",
+    },
+    {
+        icon: "⚡",
+        name: "Speed Networking",
+        description: "Timed rounds with professionals from top tech companies",
+    },
+    {
+        icon: "🌐",
+        name: "Free-For-All",
+        description: "Open networking to deepen connections at your own pace",
+    },
+    {
+        icon: "🎁",
+        name: "Raffle",
+        description: "Prizes earned throughout the night for top networkers",
+    },
+];
 
 const professionals = [
     { name: "Sponsor Logo", href: "#sponsor-1", direction: "left", petr: false },
@@ -77,21 +98,11 @@ export default function About(){
 
             </section>
 
-            <section className="relative grid min-h-screen w-full items-center gap-12 px-6 py-24 lg:grid-cols-[0.95fr_1.05fr] lg:px-16">
-                <div className="asteroid-belt" aria-hidden>
-                    {Array.from({ length: 14 }).map((_, index) => (
-                        <motion.span
-                            key={index}
-                            className="asteroid"
-                            animate={{ y: [0, index % 2 ? 10 : -10, 0], rotate: [0, 8, -6, 0] }}
-                            transition={{ duration: 3 + (index % 4), repeat: Infinity, ease: "easeInOut" }}
-                        />
-                    ))}
-                </div>
-
-                <div className="relative z-10">
+            <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-6 py-24 text-center lg:px-16">
+                <div className="relative z-10 mx-auto max-w-5xl">
                     <ScrollFloat
-                        textClassName="text-[clamp(2.75rem,7vw,4.5rem)] font-bold leading-tight tracking-tight"
+                        containerClassName="mb-0 text-center"
+                        textClassName="text-[clamp(2.4rem,10vw,4.5rem)] font-bold leading-tight tracking-tight md:text-[clamp(3rem,6vw,4.5rem)]"
                         variant="galaxyStar"
                         animationDuration={1}
                         ease="back.inOut(2)"
@@ -101,18 +112,39 @@ export default function About(){
                     >
                         What is Networking Night?
                     </ScrollFloat>
-                    <Typography className="mt-8 max-w-3xl text-lg leading-8 text-white/80">
-                        Networking Night is a high-energy, cross-company event where students and professionals from across the tech industry come together for rotating table games and speed networking rounds that encourage collaboration, communication, and quick thinking. The night concludes with open-format networking to deepen conversations and form real connections.
+                    <div className="mx-auto mt-3 h-1 w-24 rounded-full bg-(--galaxy-nebula)" />
+                    <Typography className="mx-auto mt-10 max-w-4xl text-base font-semibold leading-8 text-white/85 md:text-lg">
+                        <span className="font-black text-(--galaxy-star)">
+                            Networking Night
+                        </span>{" "}
+                        is a high-energy, cross-company event, where students and professionals from across the tech industry will be brought together for an exciting night of rotating table games and speed networking rounds that encourage collaboration, communication, and quick thinking. Our night will conclude with an open-format networking to deepen conversations and make lasting bonds. With refreshments and raffle prizes earned, Networking Night goes beyond traditional career events, serving as an opportunity to build confidence, expand your network, and form real connections.
                     </Typography>
                 </div>
 
-                <div className="relative z-10 grid gap-4 sm:grid-cols-2">
+                <div className="relative z-10 mt-16 grid w-full max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
                     {events.map((event) => (
-                        <div key={event} className="glass-card p-6">
-                            <Typography variant="galaxyStar" className="font-bold">
-                                {event}
+                        <div key={event.name} className="glass-card flex min-h-44 flex-col items-center justify-center p-6 text-center">
+                            <span className="text-4xl" aria-hidden>
+                                {event.icon}
+                            </span>
+                            <Typography variant="galaxyStar" className="mt-4 text-xl font-black">
+                                {event.name}
+                            </Typography>
+                            <Typography className="mt-3 max-w-52 text-sm font-semibold leading-6 text-white/70">
+                                {event.description}
                             </Typography>
                         </div>
+                    ))}
+                </div>
+
+                <div className="asteroid-belt about-asteroid-belt" aria-hidden>
+                    {Array.from({ length: 14 }).map((_, index) => (
+                        <motion.span
+                            key={index}
+                            className="asteroid"
+                            animate={{ y: [0, index % 2 ? 10 : -10, 0], rotate: [0, 8, -6, 0] }}
+                            transition={{ duration: 3 + (index % 4), repeat: Infinity, ease: "easeInOut" }}
+                        />
                     ))}
                 </div>
             </section>

@@ -306,6 +306,32 @@ body {
 .asteroid:nth-child(13) { left: 24%; top: 84%; }
 .asteroid:nth-child(14) { left: 72%; top: 22%; width: 2.1rem; }
 
+.about-asteroid-belt {
+  position: relative;
+  inset: auto;
+  width: calc(100% + 10rem);
+  height: 8rem;
+  margin-top: 2.75rem;
+  margin-bottom: -5rem;
+  transform: rotate(0deg);
+  opacity: 0.75;
+}
+
+.about-asteroid-belt .asteroid:nth-child(1) { left: 2%; top: 62%; }
+.about-asteroid-belt .asteroid:nth-child(2) { left: 8%; top: 48%; width: 2.2rem; }
+.about-asteroid-belt .asteroid:nth-child(3) { left: 15%; top: 36%; width: 3.4rem; }
+.about-asteroid-belt .asteroid:nth-child(4) { left: 24%; top: 52%; width: 2.1rem; }
+.about-asteroid-belt .asteroid:nth-child(5) { left: 31%; top: 44%; width: 2.6rem; }
+.about-asteroid-belt .asteroid:nth-child(6) { left: 42%; top: 34%; width: 4.2rem; }
+.about-asteroid-belt .asteroid:nth-child(7) { left: 51%; top: 40%; width: 2rem; }
+.about-asteroid-belt .asteroid:nth-child(8) { left: 58%; top: 42%; width: 4.6rem; }
+.about-asteroid-belt .asteroid:nth-child(9) { left: 68%; top: 36%; width: 2.4rem; }
+.about-asteroid-belt .asteroid:nth-child(10) { left: 75%; top: 48%; width: 2rem; }
+.about-asteroid-belt .asteroid:nth-child(11) { left: 81%; top: 35%; width: 3.3rem; }
+.about-asteroid-belt .asteroid:nth-child(12) { left: 88%; top: 42%; width: 3.8rem; }
+.about-asteroid-belt .asteroid:nth-child(13) { left: 94%; top: 30%; width: 1.9rem; }
+.about-asteroid-belt .asteroid:nth-child(14) { left: 98%; top: 58%; width: 2.5rem; }
+
 .ufo-card {
   display: flex;
   min-height: 17rem;
