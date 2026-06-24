@@ -9,7 +9,7 @@ import {
   type RefObject,
 } from 'react';
 import { motion } from 'motion/react';
-import { fredoka, robotoFlex, type AppFont } from '@/lib/fonts';
+import { robotoFlex, type AppFont } from '@/lib/fonts';
 import { brandColors, type BrandColor } from '@/lib/colors';
 
 type Falloff = 'linear' | 'exponential' | 'gaussian';
@@ -215,9 +215,7 @@ const VariableProximity = forwardRef<HTMLSpanElement, VariableProximityProps>((p
                   display: 'inline-block',
                   transformOrigin: 'center center',
                   ...(hasScaleAnimation ? { transform: `scale(${fromScale})` } : {}),
-                  fontVariationSettings:
-                    interpolatedSettingsRef.current[currentLetterIndex] ??
-                    fromFontVariationSettings,
+                  fontVariationSettings: fromFontVariationSettings,
                 }}
                 aria-hidden="true"
               >

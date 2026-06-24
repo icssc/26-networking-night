@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
 import { GalaxyBackground } from "@/components/GalaxyBackground";
 import { MuiProvider } from "@/components/MuiProvider";
+import { nunito } from "@/lib/fonts";
 import "./globals.css";
-
-const nunito = Nunito({
-  variable: "--font-nunito",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Networking Night",

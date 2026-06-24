@@ -1,5 +1,4 @@
 import HomeContent from "./HomeContent";
-import About from "./sections/about";
 
 export default function Home() {
   return (

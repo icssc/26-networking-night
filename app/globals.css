@@ -108,3 +108,379 @@ body {
   height: 100%;
   pointer-events: none;
 }
+
+.glass-card {
+  border: 1px solid color-mix(in srgb, var(--galaxy-nebula) 36%, transparent);
+  border-radius: 2rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.04)),
+    color-mix(in srgb, var(--galaxy-deep) 42%, transparent);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+.planet {
+  width: clamp(7rem, 18vw, 18rem);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  filter: drop-shadow(0 0 36px rgba(200, 162, 200, 0.2));
+}
+
+.planet::before,
+.planet::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+.planet::before {
+  inset: 0;
+  background:
+    radial-gradient(circle at 34% 26%, rgba(255, 255, 255, 0.55), transparent 15%),
+    radial-gradient(circle at 68% 70%, rgba(10, 11, 20, 0.24), transparent 30%);
+}
+
+.planet::after {
+  inset: 42% -18%;
+  height: 16%;
+  border: 2px solid rgba(255, 229, 153, 0.45);
+  transform: rotate(-16deg);
+}
+
+.planet--lavender {
+  background: linear-gradient(135deg, #f2ccff, #8f7adf 48%, #3d426b);
+}
+
+.planet--gold {
+  width: clamp(5rem, 12vw, 11rem);
+  background: linear-gradient(135deg, #fff1b6, #f0b85e 52%, #926646);
+}
+
+.planet--deep {
+  width: clamp(10rem, 30vw, 26rem);
+  background: linear-gradient(135deg, #6d73ad, #2f3354 58%, #131624);
+  opacity: 0.52;
+}
+
+.hero-moon {
+  position: relative;
+  width: min(72vw, 24rem);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.86), transparent 6%),
+    radial-gradient(circle at 64% 34%, rgba(61, 66, 107, 0.22), transparent 11%),
+    radial-gradient(circle at 47% 68%, rgba(61, 66, 107, 0.18), transparent 13%),
+    linear-gradient(135deg, #fff7d2, #d7c5a6);
+  box-shadow:
+    inset -34px -38px 0 rgba(61, 66, 107, 0.16),
+    0 0 90px rgba(255, 229, 153, 0.28);
+}
+
+.hero-moon__petr,
+.night-petr,
+.shooting-petr,
+.ufo__petr,
+.moon-surface-petr {
+  display: grid;
+  place-items: center;
+  border: 3px solid var(--galaxy-deep);
+  border-radius: 999px;
+  background: #fff6df;
+  color: var(--galaxy-deep);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.hero-moon__petr {
+  position: absolute;
+  right: 8%;
+  bottom: 20%;
+  width: 4.8rem;
+  height: 3.8rem;
+  transform: rotate(16deg);
+}
+
+.night-petr {
+  position: absolute;
+  right: -3.2rem;
+  bottom: -1.2rem;
+  width: 4rem;
+  height: 3rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+}
+
+.shooting-petr {
+  position: relative;
+  width: clamp(7rem, 22vw, 16rem);
+  height: clamp(3.2rem, 8vw, 5.8rem);
+  border-radius: 999px 55% 55% 999px;
+  box-shadow: 0 0 34px rgba(255, 229, 153, 0.24);
+}
+
+.shooting-petr::before {
+  content: "";
+  position: absolute;
+  right: 88%;
+  width: 12rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 229, 153, 0.82));
+}
+
+.shooting-petr-star {
+  width: clamp(3rem, 8vw, 6rem);
+  aspect-ratio: 1;
+  clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 56%, 79% 91%, 50% 70%, 21% 91%, 32% 56%, 2% 35%, 39% 35%);
+  filter: drop-shadow(0 0 18px currentColor);
+}
+
+.shooting-petr-star--blue {
+  color: #b8d7ff;
+  background: currentColor;
+}
+
+.shooting-petr-star--yellow {
+  color: var(--galaxy-star);
+  background: currentColor;
+}
+
+.shooting-transition {
+  background: linear-gradient(180deg, transparent, rgba(61, 66, 107, 0.18), transparent);
+}
+
+.shooting-line {
+  position: absolute;
+  right: -12rem;
+  width: clamp(10rem, 28vw, 22rem);
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--galaxy-star), white);
+  box-shadow: 0 0 24px rgba(255, 229, 153, 0.6);
+}
+
+.shooting-line::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 999px;
+  background: white;
+  transform: translateY(-50%);
+}
+
+.asteroid-belt {
+  position: absolute;
+  inset: 4% -10% 0 28%;
+  pointer-events: none;
+  transform: rotate(-12deg);
+}
+
+.asteroid {
+  position: absolute;
+  width: clamp(1.5rem, 4vw, 4.2rem);
+  aspect-ratio: 1.25;
+  border-radius: 54% 46% 62% 38%;
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.24), transparent 13%),
+    linear-gradient(135deg, #bca98b, #6f6070);
+  box-shadow: inset -10px -12px 0 rgba(0, 0, 0, 0.14);
+}
+
+.asteroid:nth-child(1) { left: 5%; top: 64%; }
+.asteroid:nth-child(2) { left: 12%; top: 48%; width: 3.7rem; }
+.asteroid:nth-child(3) { left: 20%; top: 36%; }
+.asteroid:nth-child(4) { left: 30%; top: 28%; width: 4.8rem; }
+.asteroid:nth-child(5) { left: 42%; top: 25%; }
+.asteroid:nth-child(6) { left: 55%; top: 30%; width: 5.4rem; }
+.asteroid:nth-child(7) { left: 67%; top: 42%; }
+.asteroid:nth-child(8) { left: 77%; top: 58%; width: 4.4rem; }
+.asteroid:nth-child(9) { left: 84%; top: 72%; }
+.asteroid:nth-child(10) { left: 60%; top: 66%; width: 2.4rem; }
+.asteroid:nth-child(11) { left: 48%; top: 78%; }
+.asteroid:nth-child(12) { left: 35%; top: 72%; width: 3.2rem; }
+.asteroid:nth-child(13) { left: 24%; top: 84%; }
+.asteroid:nth-child(14) { left: 72%; top: 22%; width: 2.1rem; }
+
+.ufo-card {
+  display: flex;
+  min-height: 17rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 229, 153, 0.24);
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.ufo-card:hover {
+  border-color: rgba(255, 229, 153, 0.7);
+  transform: translateY(-6px);
+}
+
+.ufo {
+  position: relative;
+  display: grid;
+  width: 12rem;
+  height: 5.4rem;
+  place-items: center;
+  border-radius: 50% 50% 42% 42%;
+  background: linear-gradient(180deg, #f7ecff 0 36%, #8f7adf 37% 68%, #3d426b 69%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25), 0 0 26px rgba(200, 162, 200, 0.25);
+}
+
+.ufo::before {
+  content: "";
+  position: absolute;
+  top: -1.4rem;
+  width: 5.8rem;
+  height: 3.4rem;
+  border-radius: 999px 999px 25% 25%;
+  background: rgba(255, 255, 255, 0.58);
+  border: 2px solid rgba(255, 255, 255, 0.45);
+}
+
+.ufo::after {
+  content: "";
+  position: absolute;
+  bottom: 0.9rem;
+  width: 9rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: repeating-linear-gradient(90deg, var(--galaxy-star) 0 0.6rem, var(--galaxy-nebula) 0.6rem 1.2rem);
+}
+
+.ufo--2 {
+  background: linear-gradient(180deg, #fff8cf 0 36%, #c8a2c8 37% 68%, #565c91 69%);
+}
+
+.ufo--3,
+.ufo--beam {
+  background: linear-gradient(180deg, #dcecff 0 36%, #ffe599 37% 68%, #3d426b 69%);
+}
+
+.ufo__logo,
+.ufo__petr {
+  position: relative;
+  z-index: 1;
+}
+
+.ufo__logo {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--galaxy-deep);
+  font-weight: 900;
+  padding: 0.6rem 1rem;
+  text-transform: uppercase;
+}
+
+.ufo__petr {
+  width: 3.6rem;
+  height: 2.8rem;
+}
+
+.beam-ufo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 0;
+  transform: translateX(-50%);
+  opacity: 0.7;
+}
+
+.tractor-beam {
+  position: absolute;
+  left: 50%;
+  top: 4.8rem;
+  width: 12rem;
+  height: 32rem;
+  background: linear-gradient(180deg, rgba(255, 229, 153, 0.34), transparent);
+  clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%);
+  transform: translateX(-50%);
+}
+
+.benefit-chip {
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.9rem 1rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.moon-section {
+  min-height: 95vh;
+  color: var(--galaxy-deep);
+  background:
+    radial-gradient(circle at 14% 18%, rgba(61, 66, 107, 0.14), transparent 7rem),
+    radial-gradient(circle at 80% 38%, rgba(61, 66, 107, 0.12), transparent 8rem),
+    linear-gradient(180deg, #f7e7bd, #cdb995 45%, #927d68);
+}
+
+.moon-section::before {
+  content: "";
+  position: absolute;
+  inset: -5rem -10% auto;
+  height: 12rem;
+  border-radius: 50%;
+  background: #f7e7bd;
+  box-shadow: inset 0 -34px 0 rgba(61, 66, 107, 0.08);
+}
+
+.moon-surface-petr {
+  position: absolute;
+  left: 50%;
+  top: 2.2rem;
+  z-index: 1;
+  width: 5rem;
+  height: 3.4rem;
+  transform: translateX(-50%) rotate(-8deg);
+}
+
+.faq-button {
+  border: 2px solid rgba(61, 66, 107, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 1rem 1.2rem;
+  color: var(--galaxy-deep);
+  font-weight: 900;
+  text-align: left;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.faq-button:hover,
+.faq-button--active {
+  background: var(--galaxy-star);
+  transform: translateX(4px);
+}
+
+.moon-answer {
+  min-height: 15rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.32);
+  padding: 2rem;
+  box-shadow: inset 0 0 0 1px rgba(61, 66, 107, 0.12);
+}
+
+@media (max-width: 768px) {
+  .asteroid-belt {
+    inset: 8% -45% 0 18%;
+    opacity: 0.35;
+  }
+
+  .beam-ufo {
+    opacity: 0.24;
+  }
+
+  .night-petr {
+    right: -1.2rem;
+    width: 3rem;
+    height: 2.3rem;
+    font-size: 0.58rem;
+  }
+}
