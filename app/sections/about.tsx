@@ -173,9 +173,18 @@ export default function About(){
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.7, delay: index * 0.12 }}
                         >
-                            <span className={`ufo ufo--${(index % 3) + 1}`}>
+                            <motion.span
+                                className={`ufo ufo--${(index % 3) + 1}`}
+                                animate={{ x: [-18, 18, -18] }}
+                                transition={{
+                                    duration: 3.8 + index * 0.35,
+                                    delay: index * 0.2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                            >
                                 {professional.petr ? <span className="ufo__petr">petr</span> : <span className="ufo__logo">logo</span>}
-                            </span>
+                            </motion.span>
                             <Typography className="mt-6 font-bold">{professional.name}</Typography>
                         </motion.a>
                     ))}

@@ -84,10 +84,12 @@ export default function Landing(){
                             style={bubblyTitleStyle}
                             label="Networking"
                             fromFontVariationSettings="'wght' 600"
-                            toFontVariationSettings="'wght' 900"
+                            toFontVariationSettings="'wght' 700"
                             containerRef={networkingContainerRef}
                             radius={100}
                             falloff="linear"
+                            fromScale={1}
+                            toScale={1.08}
                         />
                     </div>
 
@@ -98,10 +100,12 @@ export default function Landing(){
                             style={bubblyTitleStyle}
                             label="Night"
                             fromFontVariationSettings="'wght' 600"
-                            toFontVariationSettings="'wght' 900"
+                            toFontVariationSettings="'wght' 700"
                             containerRef={nightContainerRef}
                             radius={100}
                             falloff="linear"
+                            fromScale={1}
+                            toScale={1.08}
                         />
                         
 
